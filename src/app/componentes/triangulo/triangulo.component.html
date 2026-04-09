@@ -1,0 +1,46 @@
+<ion-card mode="ios">
+  <ion-card-header>
+    <ion-note color="dark">PERÍMETRO</ion-note>
+    <ion-card-title style="font-weight: bold;">Triángulo</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <p>El perímetro de un triángulo es la suma de las longitudes de sus tres lados. En otras palabras, es la medida total del contorno o borde del triángulo.</p>
+    
+    <div style="text-align: center; margin: 15px 0;">
+      <!-- Imagen codificada: No necesita internet, el navegador la dibuja sola -->
+      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cG9seWdvbiBwb2ludHM9IjEwLDkwIDkwLDkwIDUwLDEwIiBmaWxsPSJub25lIiBzdHJva2U9ImJsdWUiIHN0cm9rZS13aWR0aD0iMiIvPjx0ZXh0IHg9IjQ4IiB5PSI1IiBmaWxsPSJibHVlIj5hPC90ZXh0Pjx0ZXh0IHg9IjUiIHk9IjUwIiBmaWxsPSJibHVlIj5iPC90ZXh0Pjx0ZXh0IHg9IjkwIiB5PSI1MCIgZmlsbD0iYmx1ZSI+YzwvdGV4dD48L3N2Zz4=" 
+           style="width: 150px; height: auto;" 
+           alt="Triángulo">
+    </div>
+
+    <div style="text-align: center; font-size: 1.4em; font-family: serif; margin-top: 10px;">
+      <i>p = a + b + c</i>
+    </div>
+  </ion-card-content>
+</ion-card>
+
+<ion-item lines="inset">
+  <ion-label position="floating">Lado A (cm)</ion-label>
+  <ion-input type="number" [(ngModel)]="ladoA" placeholder="0"></ion-input>
+</ion-item>
+
+<ion-item lines="inset">
+  <ion-label position="floating">Lado B (cm)</ion-label>
+  <ion-input type="number" [(ngModel)]="ladoB" placeholder="0"></ion-input>
+</ion-item>
+
+<ion-item lines="inset" class="ion-margin-bottom">
+  <ion-label position="floating">Lado C (cm)</ion-label>
+  <ion-input type="number" [(ngModel)]="ladoC" placeholder="0"></ion-input>
+</ion-item>
+
+<ion-button expand="block" (click)="calcular()" class="ion-margin">
+  CALCULAR EL PERÍMETRO
+</ion-button>
+
+<ion-item *ngIf="resultado" lines="none">
+  <ion-text color="primary" style="font-size: 1.2em; font-weight: bold;">
+    {{ resultado }}
+  </ion-text>
+</ion-item>
